@@ -29,22 +29,9 @@ def call(Map pipelineParams) {
           }
         }
       }
-      
-      Stage('Build, Test & Upload Snapshot to Nexus') {
-        when {
-          expression { buildAndUploadSnapshot == true }
-        }
-        steps {
-          git branch: "${BRANCH_NAME}", url: pipelineParams.gitUrl
-          println("BUILD")
-          withMaven(maven: "${mavenTool}") {
-            sh "mvn -f ${pipelineParams.pomfile} -e clean Deploy"
-          }
-        }
-      }
     }
   }
-}
+
   
           
   
