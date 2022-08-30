@@ -14,10 +14,10 @@ def call(Map pipelineParams) {
        maven "${mavenTool}"
     }
     
-    /*parameteres {
+    parameteres {
       string(defaultValue: 'NA',  description: 'Next Snapshot Version (-SNAPSHOT will be added automatically)', name: 'NEXT_SNAPSHOT_VERSION', trim:true)
       booleanParam(name: 'BUILD_AND_UPLOAD_SNAPSHOT', defaultValue: false, description: 'Do you want to build this branch and upload to SNAPSHOTS? (default of true for master branch, false for others)')
-    } **/
+    } 
 
     stages {
       stage ('Build setup') {
